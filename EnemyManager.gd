@@ -9,9 +9,9 @@ var enemies_data = {
 		"reward_gold": 150,
 		"texture": "res://Ravens.png",
 		"actions": [
-			{"type": 0, "weight": 0},  # 0 = ATTACK_PLAYER
-			{"type": 1, "weight": 0},  # 1 = ATTACK_ALL
-			{"type": 2, "weight": 100}   # 2 = DEFEND 
+			{"type": 0, "weight": 50},  # 0 = ATTACK_PLAYER
+			{"type": 1, "weight": 20},  # 1 = ATTACK_ALL
+			{"type": 2, "weight": 30}   # 2 = DEFEND 
 		]
 	},
 	"Skeleton": {

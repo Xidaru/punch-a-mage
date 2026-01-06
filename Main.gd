@@ -25,8 +25,8 @@ enum EnemyAction { ATTACK_PLAYER, ATTACK_ALL, DEFEND, SUMMON_ALLY}
 # Параметры игрока
 var player_hp := 100
 var player_max_hp := 100
-var energy := 9
-var max_energy := 9
+var energy := 3
+var max_energy := 3
 var player_gold := 0
 var game_state = GameState.PLAYER_TURN
 

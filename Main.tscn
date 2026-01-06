@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy083ie5ocqb1"]
+[gd_scene load_steps=8 format=3 uid="uid://tpmwlrbu67i6"]
 
-[ext_resource type="Script" uid="uid://dqlp8en7juple" path="res://testing_drag.gd" id="1_om6bt"]
+[ext_resource type="Script" uid="uid://dqlp8en7juple" path="res://Main.gd" id="1_om6bt"]
 [ext_resource type="Texture2D" uid="uid://dfxibp2o7mv4n" path="res://Front.png" id="2_kwo4o"]
 [ext_resource type="Script" uid="uid://bj204tfo86i46" path="res://front.gd" id="3_17sxh"]
 [ext_resource type="Texture2D" uid="uid://dhhiycm1uux20" path="res://Back.png" id="4_kamf2"]
@@ -45,7 +45,6 @@ shape = SubResource("RectangleShape2D_wdypl")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubCard1"]
 position = Vector2(1.5743, -4.33334)
-scale = Vector2(1, 1)
 texture = ExtResource("2_kwo4o")
 
 [node name="SubCard2" type="Area2D" parent="CanvasLayer"]

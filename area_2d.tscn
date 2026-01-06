@@ -4,12 +4,33 @@
 [ext_resource type="Texture2D" uid="uid://dfxibp2o7mv4n" path="res://Front.png" id="2_5rgpn"]
 [ext_resource type="Script" uid="uid://bj204tfo86i46" path="res://front.gd" id="3_l08u0"]
 [ext_resource type="Texture2D" uid="uid://dhhiycm1uux20" path="res://Back.png" id="4_l08u0"]
-[ext_resource type="Script" uid="uid://c30g4dbud1n11" path="res://sub_card_2.gd" id="4_oqxq1"]
-[ext_resource type="Script" uid="uid://ckcx4yhgw7u0a" path="res://sub_card_3.gd" id="5_l08u0"]
-[ext_resource type="Script" uid="uid://7ienhlstcoo5" path="res://sub_card_4.gd" id="6_nrb8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl81w"]
 size = Vector2(154, 210)
+
+[sub_resource type="GDScript" id="GDScript_c0nl8"]
+script/source = "extends Sprite2D
+
+
+@export var front_texture: Texture
+@export var back_texture: Texture
+"
+
+[sub_resource type="GDScript" id="GDScript_1dtnr"]
+script/source = "extends Sprite2D
+
+
+@export var front_texture: Texture
+@export var back_texture: Texture
+"
+
+[sub_resource type="GDScript" id="GDScript_c33a7"]
+script/source = "extends Sprite2D
+
+
+@export var front_texture: Texture
+@export var back_texture: Texture
+"
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_dl81w")
@@ -34,7 +55,7 @@ texture_filter = 1
 position = Vector2(2117.44, 3179.79)
 scale = Vector2(3.176, 3)
 texture = ExtResource("2_5rgpn")
-script = ExtResource("4_oqxq1")
+script = SubResource("GDScript_c0nl8")
 front_texture = ExtResource("2_5rgpn")
 back_texture = ExtResource("4_l08u0")
 
@@ -43,7 +64,7 @@ texture_filter = 1
 position = Vector2(509, 781)
 scale = Vector2(3.086, 3)
 texture = ExtResource("2_5rgpn")
-script = ExtResource("4_oqxq1")
+script = SubResource("GDScript_c0nl8")
 front_texture = ExtResource("2_5rgpn")
 back_texture = ExtResource("4_l08u0")
 
@@ -52,7 +73,7 @@ texture_filter = 1
 position = Vector2(676, 780)
 scale = Vector2(3.086, 3)
 texture = ExtResource("2_5rgpn")
-script = ExtResource("5_l08u0")
+script = SubResource("GDScript_1dtnr")
 front_texture = ExtResource("2_5rgpn")
 back_texture = ExtResource("4_l08u0")
 
@@ -61,7 +82,7 @@ texture_filter = 1
 position = Vector2(845, 780)
 scale = Vector2(3.086, 3)
 texture = ExtResource("2_5rgpn")
-script = ExtResource("6_nrb8d")
+script = SubResource("GDScript_c33a7")
 front_texture = ExtResource("2_5rgpn")
 back_texture = ExtResource("4_l08u0")
 
