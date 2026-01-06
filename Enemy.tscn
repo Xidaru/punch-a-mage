@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgnrgg48bcwdx"]
+
+[ext_resource type="Script" uid="uid://csnq73w6xv2li" path="res://Enemy.gd" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://dqb84gpdlgewc" path="res://Enemy.png" id="2_2hac7"]
+[ext_resource type="Shader" uid="uid://x83bfuv0x0ww" path="res://3dcard.gdshader" id="2_e6d4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
+size = Vector2(148, 209)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qp131"]
+shader = ExtResource("2_e6d4v")
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_s7bn3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_s7bn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_qp131")
+position = Vector2(-1, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("2_2hac7")
+
+[node name="EnemyHPLabel" type="Label" parent="."]
+offset_left = -75.0
+offset_top = 106.0
+offset_right = 74.0
+offset_bottom = 129.0

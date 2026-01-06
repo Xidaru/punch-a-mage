@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwjnc37lem2ql"]
+
+[ext_resource type="Script" uid="uid://dj2wdth2yk1d0" path="res://main_menu.gd" id="1_i26rj"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_i26rj")
+
+[node name="BlackOverlay" type="ColorRect" parent="."]
+z_index = 1
+offset_left = -18.0
+offset_top = -12.0
+offset_right = 1949.0
+offset_bottom = 1103.0
+color = Color(0, 0, 0, 0)
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 845.0
+offset_top = 487.0
+offset_right = 1109.0
+offset_bottom = 575.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 42
+text = "Exit"
+
+[node name="Play" type="Button" parent="."]
+offset_left = 845.0
+offset_top = 348.0
+offset_right = 1109.0
+offset_bottom = 436.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 42
+text = "Play"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 499.0
+offset_top = 139.0
+offset_right = 1421.0
+offset_bottom = 293.0
+pivot_offset = Vector2(484, 71)
+size_flags_horizontal = 0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "PUNCH-A-MAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

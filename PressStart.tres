@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://crpjkx1vj7s0q"]
+
+[ext_resource type="FontFile" uid="uid://ce7of8olab6nd" path="res://PressStart2P-Regular.ttf" id="1_ryxpi"]
+
+[resource]
+base_font = ExtResource("1_ryxpi")

@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcvw6kund46xl"]
+
+[ext_resource type="Script" uid="uid://dqlp8en7juple" path="res://testing_drag.gd" id="1_o5cci"]
+[ext_resource type="Texture2D" uid="uid://dfxibp2o7mv4n" path="res://Front.png" id="2_s3h1l"]
+[ext_resource type="Script" uid="uid://bj204tfo86i46" path="res://front.gd" id="3_e3dcx"]
+[ext_resource type="Texture2D" uid="uid://dhhiycm1uux20" path="res://Back.png" id="4_5hmpk"]
+[ext_resource type="FontFile" uid="uid://csj1ini5i8wv1" path="res://ka1.ttf" id="5_o5cci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl81w"]
+size = Vector2(154, 210)
+
+[node name="Area2D" type="Node2D"]
+script = ExtResource("1_o5cci")
+
+[node name="MainCardArea" type="Area2D" parent="."]
+position = Vector2(978, 666)
+
+[node name="Sprite2D" type="Sprite2D" parent="MainCardArea"]
+texture_filter = 1
+position = Vector2(1, 1)
+scale = Vector2(3, 3)
+texture = ExtResource("2_s3h1l")
+script = ExtResource("3_e3dcx")
+front_texture = ExtResource("2_s3h1l")
+back_texture = ExtResource("4_5hmpk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainCardArea"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_dl81w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FlipButton" type="Button" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.0338542
+anchor_top = -0.0395062
+anchor_right = 0.0338542
+anchor_bottom = 0.000308623
+offset_left = 1276.0
+offset_top = 587.667
+offset_right = 1777.0
+offset_bottom = 686.667
+text = "Flippi Floppa"
+metadata/_edit_use_anchors_ = true
+
+[node name="EndTurnButton" type="Button" parent="CanvasLayer"]
+offset_left = 1343.0
+offset_top = 705.0
+offset_right = 1604.0
+offset_bottom = 769.0
+text = "End Turn"
+
+[node name="DrawPileLabel" type="RichTextLabel" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 166.0
+offset_top = 860.0
+offset_right = 346.0
+offset_bottom = 902.0
+
+[node name="PlayerHPLabel" type="RichTextLabel" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 891.0
+offset_top = 523.0
+offset_right = 1071.0
+offset_bottom = 565.0
+
+[node name="EnergyLabel" type="RichTextLabel" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 59.0
+offset_top = 621.0
+offset_right = 268.0
+offset_bottom = 763.0
+
+[node name="GoldLabel" type="RichTextLabel" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 31.0
+offset_top = 965.0
+offset_right = 342.0
+offset_bottom = 1045.0
+theme_override_font_sizes/normal_font_size = 20
+
+[node name="TurnLabel" type="RichTextLabel" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 45.0
+offset_top = 31.0
+offset_right = 311.0
+offset_bottom = 80.0
+
+[node name="BlockLabel" type="RichTextLabel" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 802.0
+offset_top = 616.0
+offset_right = 890.0
+offset_bottom = 734.0
+
+[node name="GameOverScreen" type="RichTextLabel" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 563.0
+offset_top = 298.0
+offset_right = 1363.0
+offset_bottom = 498.0
+theme_override_fonts/normal_font = ExtResource("5_o5cci")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "YOU LOST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiscardPileLabel" type="RichTextLabel" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 1420.0
+offset_top = 884.0
+offset_right = 1600.0
+offset_bottom = 926.0

@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy083ie5ocqb1"]
+
+[ext_resource type="Script" uid="uid://dqlp8en7juple" path="res://testing_drag.gd" id="1_om6bt"]
+[ext_resource type="Texture2D" uid="uid://dfxibp2o7mv4n" path="res://Front.png" id="2_kwo4o"]
+[ext_resource type="Script" uid="uid://bj204tfo86i46" path="res://front.gd" id="3_17sxh"]
+[ext_resource type="Texture2D" uid="uid://dhhiycm1uux20" path="res://Back.png" id="4_kamf2"]
+[ext_resource type="Script" uid="uid://cx0ew554b0up3" path="res://sub_card_1.gd" id="5_kwo4o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl81w"]
+size = Vector2(154, 210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdypl"]
+size = Vector2(16.7926, 23.3333)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_om6bt")
+
+[node name="Front" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(587.15, 409)
+scale = Vector2(3.086, 3)
+texture = ExtResource("2_kwo4o")
+script = ExtResource("3_17sxh")
+front_texture = ExtResource("2_kwo4o")
+back_texture = ExtResource("4_kamf2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(587.15, 410)
+shape = SubResource("RectangleShape2D_dl81w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubCard1" type="Area2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(311, 793)
+scale = Vector2(3.176, 3)
+script = ExtResource("5_kwo4o")
+front_texture = ExtResource("2_kwo4o")
+back_texture = ExtResource("4_kamf2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/SubCard1"]
+position = Vector2(1.57431, -4.33331)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_wdypl")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubCard1"]
+position = Vector2(1.5743, -4.33334)
+scale = Vector2(1, 1)
+texture = ExtResource("2_kwo4o")
+
+[node name="SubCard2" type="Area2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(311, 793)
+scale = Vector2(3.176, 3)
+script = ExtResource("5_kwo4o")
+front_texture = ExtResource("2_kwo4o")
+back_texture = ExtResource("4_kamf2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/SubCard2"]
+position = Vector2(1.57431, -4.33331)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_wdypl")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubCard2"]
+position = Vector2(1.5743, -4.33334)
+texture = ExtResource("2_kwo4o")
+
+[node name="SubCard3" type="Area2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(311, 793)
+scale = Vector2(3.176, 3)
+script = ExtResource("5_kwo4o")
+front_texture = ExtResource("2_kwo4o")
+back_texture = ExtResource("4_kamf2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/SubCard3"]
+position = Vector2(1.57431, -4.33331)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_wdypl")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubCard3"]
+position = Vector2(1.5743, -4.33334)
+texture = ExtResource("2_kwo4o")
+
+[node name="SubCard4" type="Area2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(311, 793)
+scale = Vector2(3.176, 3)
+script = ExtResource("5_kwo4o")
+front_texture = ExtResource("2_kwo4o")
+back_texture = ExtResource("4_kamf2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/SubCard4"]
+position = Vector2(1.57431, -4.33331)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_wdypl")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubCard4"]
+position = Vector2(1.5743, -4.33334)
+texture = ExtResource("2_kwo4o")
+
+[node name="FlipButton" type="Button" parent="CanvasLayer"]
+offset_left = 687.0
+offset_top = 100.0
+offset_right = 1113.0
+offset_bottom = 199.0
+metadata/_edit_use_anchors_ = true

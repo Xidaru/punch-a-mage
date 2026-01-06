@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcvw6kund46xl"]
+
+[ext_resource type="Script" uid="uid://dqlp8en7juple" path="res://testing_drag.gd" id="1_o5cci"]
+[ext_resource type="Texture2D" uid="uid://dfxibp2o7mv4n" path="res://Front.png" id="2_s3h1l"]
+[ext_resource type="Script" uid="uid://bj204tfo86i46" path="res://front.gd" id="3_e3dcx"]
+[ext_resource type="Texture2D" uid="uid://dhhiycm1uux20" path="res://Back.png" id="4_5hmpk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl81w"]
+size = Vector2(154, 210)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_o5cci")
+
+[node name="Front" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(895, 809)
+scale = Vector2(3, 3)
+texture = ExtResource("2_s3h1l")
+script = ExtResource("3_e3dcx")
+front_texture = ExtResource("2_s3h1l")
+back_texture = ExtResource("4_5hmpk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(894.837, 808.75)
+shape = SubResource("RectangleShape2D_dl81w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FlipButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.0338542
+anchor_top = -0.0395062
+anchor_bottom = 0.000308623
+offset_left = 1276.0
+offset_top = 587.667
+offset_right = 1777.0
+offset_bottom = 686.667
+text = "Flippi Floppa"
+metadata/_edit_use_anchors_ = true

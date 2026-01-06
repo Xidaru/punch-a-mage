@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://dto0ueg7qaqj4"]
+
+[ext_resource type="Texture2D" uid="uid://dfxibp2o7mv4n" path="res://Front.png" id="2_l2r48"]
+
+[sub_resource type="GDScript" id="GDScript_bwirh"]
+script/source = "extends Area2D
+
+@onready var sub_cards := [
+	$CanvasLayer/SubCard1,
+	$CanvasLayer/SubCard2,
+	$CanvasLayer/SubCard3,
+	$CanvasLayer/SubCard4
+]
+
+var selected := false
+
+func _ready():
+	hide_subcards()
+
+func _input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		toggle_subcards()
+
+func toggle_subcards():
+	selected = !selected
+
+	var screen_size = get_viewport().get_visible_rect().size
+	var base_y = screen_size.y - 200
+	var spacing = 150
+	var start_x = (screen_size.x - spacing * 4) / 2
+
+	for i in range(sub_cards.size()):
+		var card = sub_cards[i]
+		var tween = create_tween()
+		tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+
+	var target_y = base_y if selected else screen_size.y + 200
+	var target_pos = Vector2(start_x + i * spacing, target_y)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_bwirh")
+
+[node name="Front" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(574, 466)
+scale = Vector2(3.16, 3.07143)
+texture = ExtResource("2_l2r48")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Front"]
+
+[node name="SubCard1" type="Sprite2D" parent="Front/CanvasLayer"]
+visible = false
+texture_filter = 1
+position = Vector2(332, 781)
+scale = Vector2(3.16, 3.07143)
+texture = ExtResource("2_l2r48")
+
+[node name="SubCard2" type="Sprite2D" parent="Front/CanvasLayer"]
+texture_filter = 1
+position = Vector2(509, 781)
+scale = Vector2(3.16, 3.07143)
+texture = ExtResource("2_l2r48")
+
+[node name="SubCard3" type="Sprite2D" parent="Front/CanvasLayer"]
+texture_filter = 1
+position = Vector2(680, 782)
+scale = Vector2(3.16, 3.07143)
+texture = ExtResource("2_l2r48")
+
+[node name="SubCard4" type="Sprite2D" parent="Front/CanvasLayer"]
+texture_filter = 1
+position = Vector2(847, 782)
+scale = Vector2(3.16, 3.07143)
+texture = ExtResource("2_l2r48")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cppw17d1f0tt3"]
+
+[ext_resource type="Script" uid="uid://cx0ew554b0up3" path="res://sub_card_1.gd" id="1_sa2dy"]
+[ext_resource type="Texture2D" uid="uid://dfxibp2o7mv4n" path="res://Front.png" id="2_f8gux"]
+[ext_resource type="Shader" uid="uid://x83bfuv0x0ww" path="res://3dcard.gdshader" id="2_sa2dy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wkup"]
+size = Vector2(16.7926, 23.3333)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8gux"]
+shader = ExtResource("2_sa2dy")
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[node name="SubCard1" type="Area2D"]
+texture_filter = 1
+position = Vector2(311, 793)
+scale = Vector2(3.176, 3)
+script = ExtResource("1_sa2dy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.563e-06, 0.333337)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_3wkup")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_f8gux")
+position = Vector2(2.38419e-06, 0.333327)
+texture = ExtResource("2_f8gux")
+
+[node name="ValueLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = -24.8741
+offset_top = -52.0
+offset_right = 27.1259
+offset_bottom = -34.0
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "fdgg"
